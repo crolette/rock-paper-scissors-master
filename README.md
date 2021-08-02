@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://your-solution-url.com)
-- Live Site URL: (https://your-live-site-url.com)
+- Solution URL: (https://github.com/crolette/rock-paper-scissors-master)
+- Live Site URL: (https://crolette.github.io/rock-paper-scissors-master/)
 
 ## My process
 
