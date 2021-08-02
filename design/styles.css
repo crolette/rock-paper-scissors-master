@@ -1,0 +1,455 @@
+/* Import Font */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+/* Root */
+:root {
+  --header-outline: hsl(217, 16%, 45%);
+  --score: hsl(229, 64%, 46%);
+  --text-dark: hsl(229, 25%, 31%);
+  --white: hsl(0, 0%, 98%);
+}
+
+/* RESET CSS */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* END RESET CSS */
+
+/* TYPOGRAPHY */
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 18px;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* LAYOUT */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  border-radius: 8px;
+  border: 1px solid var(--white);
+  color: var(--white);
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+
+
+/* HEADER */
+header {
+  justify-content: space-between !important;
+
+  width: 90%;
+  max-width: 740px;
+  padding: 16px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+
+  border: 4px solid var(--header-outline);
+  border-radius: 8px;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+}
+
+.score {
+  row-gap: 8px;
+  height: 100%;
+  width: 25%;
+
+  border-radius: 8px;
+  background: var(--white);
+
+  text-transform: uppercase;
+}
+
+#score {
+  color: var(--score);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* STEP 1 */
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: row;
+  justify-items: center;
+  row-gap: 24px;
+  column-gap: 48px;
+  background-image: url("./images/bg-triangle.svg");
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.action {
+  border-radius: 50%;
+  cursor: pointer;
+  flex: 1;
+}
+
+.img_action {
+  width: 200px;
+  height: 200px;
+  margin: 24px;
+  border-radius: 50%;
+  fill: var(--text-dark);
+  background: var(--white);
+  box-shadow: 0px 6px #babfd3 inset;
+  pointer-events: none;
+}
+
+[data-choice="house"] {
+  background: #172240;
+  box-shadow: none;
+}
+
+[data-choice="house"] > .img_action {
+  background: #172240;
+  box-shadow: none;
+}
+
+.img_action img {
+  padding: 16px;
+  width: 75%;
+}
+
+[data-choice="scissors"] {
+  background-image: radial-gradient(
+    circle,
+    hsl(39, 89%, 49%) 25%,
+    hsl(40, 84%, 53%) 50%
+  );
+  box-shadow: 0px -6px #c66c1c inset;
+}
+
+[data-choice="rock"] {
+  background-image: radial-gradient(
+    circle,
+    hsl(349, 71%, 52%) 25%,
+    hsl(349, 70%, 56%) 50%
+  );
+  box-shadow: 0px 6px #9e1734;
+  grid-column: 1/3;
+}
+
+[data-choice="paper"] {
+  background-image: radial-gradient(
+    circle,
+    rgba(72, 101, 244, 1) 25%,
+    rgba(86, 113, 245, 1) 50%
+  );
+  box-shadow: 0px -6px #2945c3 inset;
+}
+
+/* STEP 2 */
+.game {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-auto-flow: row;
+  justify-items: center;
+  row-gap: 24px;
+  width: 90%;
+}
+
+.choice {
+  row-gap: 32px;
+  text-align: center;
+  flex: 1;
+}
+
+.choice > p {
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 0.15rem;
+}
+
+.result {
+  row-gap: 16px;
+}
+
+.result > p {
+  color: var(--white);
+  font-size: 2.15rem;
+  font-weight: 700;
+}
+
+.play {
+  padding: 8px;
+  width: 100%;
+}
+
+.win {
+  box-shadow: rgba(255, 255, 255, 0.045) 0px 0px 0px 40px,
+    rgba(255, 255, 255, 0.035) 0px 0px 0px 80px,
+    rgba(255, 255, 255, 0.025) 0px 0px 0px 120px;
+  /* box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 10px 20px; */
+  /* rgba(255, 255, 255, 0.5) 0px 0px 20px 10px, rgba(255, 255, 255, 0.1) 0px 0px 30px 10px; */
+  border-radius: 50%;
+}
+
+.user {
+  grid-column: 1/2;
+}
+
+.result {
+  grid-column: 2/3;
+}
+
+.house {
+  grid-column: 3/4;
+}
+
+/* RULES */
+.rules {
+  height: 100vh;
+  width: 100vw;
+  background: var(--white);
+  position: absolute;
+  text-transform: capitalize;
+  justify-content: space-evenly;
+  z-index: 10;
+}
+
+.btn__close {
+  cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 16px;
+  position: fixed;
+  bottom: 32px;
+}
+
+.btn__rules,
+.btn__bigbang {
+  padding: 8px 16px;
+}
+
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 769px) {
+  .img_action {
+    width: 175px;
+    height: 175px;
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .img_action {
+    width: 150px;
+    height: 150px;
+  }
+
+  .choice > p {
+    font-size: 1rem;
+    order: 2;
+  }
+
+  .img_action {
+    width: 100px;
+    height: 100px;
+    margin: 12px;
+  }
+
+  .game {
+    flex-wrap: wrap;
+    column-gap: 16px;
+    align-items: flex-start;
+  }
+
+  .result {
+    width: 75%;
+    order: 3;
+    grid-column: 1/4;
+  }
+
+  .win {
+    box-shadow: rgba(255, 255, 255, 0.045) 0px 0px 0px 20px,
+      rgba(255, 255, 255, 0.035) 0px 0px 0px 40px,
+      rgba(255, 255, 255, 0.025) 0px 0px 0px 60px;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 32px;
+    right: unset;
+  }
+}
