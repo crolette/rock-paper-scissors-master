@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](../images/screen1.png)
-![](../images/screen2.png)
+![Rock Paper Scissors](../images/screen1.png)
+![BONUS GAME - Rock Paper Scissors Lizard Spock](../images/screen2.png)
 
 
 ### Links
